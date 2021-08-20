@@ -1,5 +1,5 @@
 {{>partials/header}}
-
+<link rel="stylesheet" type="text/css"   href="/css/style.css">
 <fieldset>
     <legend>Adicionar novo Usuário</legend>
     <form method="POST" action="/novo-usuario">
@@ -17,9 +17,9 @@
 <ul>
     {{#users}}
         <li>{{name.firstName}} - {{age}} anos
-            <a href="/usuario/{{_id}}/addidade">+1 ano de vida</a>
-            <a href="/usuario/{{_id}}/menosidade">-1 ano de vida</a>
-            <a href="/usuario/{{_id}}/excluir">excluir</a>
+            <a href="/usuario/{{_id}}/addidade">[ + ]</a>
+            <a href="/usuario/{{_id}}/menosidade">[ - ]</a>
+            <a href="/usuario/{{_id}}/excluir">[ X ]</a>
         </li>
     {{/users}}
 </ul>
