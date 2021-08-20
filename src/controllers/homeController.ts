@@ -34,9 +34,10 @@ export const addUserAction = async (req: Request, res: Response) => {
   let newUser = await User.create({
     name: {firstName: req.body.firstName, lastName: req.body.lastName},
     email: req.body.email,
-    age: req.body.age.toString(),
+    age: req.body.age.toString() ? req.body.age.toString() : 18,
     interests: [req.body.interests]
   });
+  
   //console.log("Novo Usuário: ", newUser);
   
   res.redirect('/');

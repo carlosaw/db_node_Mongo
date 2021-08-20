@@ -12,7 +12,7 @@ type UserType = {
 
 const schema = new Schema<UserType>({
   email: { type: String, required: true },
-  age: { type: Number, required: true, default: 18 },
+  age: { type: Number, required: true },
   interests: [String],
   name: {
     firstName: { type: String, required: true },
