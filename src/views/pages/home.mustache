@@ -1,0 +1,27 @@
+{{>partials/header}}
+
+<fieldset>
+    <legend>Adicionar novo Usuário</legend>
+    <form method="POST" action="/novo-usuario">
+    <input type="text" name="firstName" placeholder="Digite seu nome" /><br/><br/>
+    <input type="text" name="lastName" placeholder="Digite seu sobrenome" /><br/><br/>
+    <input type="email" name="email" placeholder="Digite seu E-mail" /><br/><br/>
+    <input type="text" name="age" placeholder="Digite sua idade" /><br/><br/>
+    <input type="text" name="interests" placeholder="Digite interesses" /><br/><br/>
+    <input type="submit" value="Inserir" /><br/><br/>
+    </form>
+</fieldset>  
+
+<hr/>
+<h2>Usuários do MongoDB</h2>
+<ul>
+    {{#users}}
+        <li>{{name.firstName}} - {{age}} anos
+            <a href="/usuario/{{_id}}/addidade">+1 ano de vida</a>
+            <a href="/usuario/{{_id}}/menosidade">-1 ano de vida</a>
+            <a href="/usuario/{{_id}}/excluir">excluir</a>
+        </li>
+    {{/users}}
+</ul>
+
+{{>partials/footer}}
